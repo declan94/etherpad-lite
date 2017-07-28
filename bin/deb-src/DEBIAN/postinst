@@ -1,6 +1,7 @@
 #!/bin/bash
 # Start the services!
 
+chown etherpad -R /opt/etherpad
 chmod +x /etc/init.d/etherpad
 systemctl daemon-reload
 
