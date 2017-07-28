@@ -24,3 +24,7 @@ fi
 
 # Create Etherpad user
 adduser --system etherpad
+
+# Make log folder
+mkdir -p /var/log/etherpad
+chown etherpad /var/log/etherpad
