@@ -15,7 +15,6 @@ LOGFILE="/var/log/etherpad-lite/etherpad-lite.log"
 EPLITE_DIR="/opt/etherpad"
 EPLITE_BIN="bin/safeRun.sh"
 USER="etherpad"
-GROUP="etherpad"
 DESC="Etherpad Lite"
 NAME="etherpad-lite"
 
@@ -26,7 +25,7 @@ set -e
 start() {
   echo "Starting $DESC... "
   
-	start-stop-daemon --start --chuid "$USER:$GROUP" --background --make-pidfile --pidfile /var/run/$NAME.pid --exec $EPLITE_DIR/$EPLITE_BIN -- $LOGFILE || true
+	start-stop-daemon --start --chuid "$USER" --background --make-pidfile --pidfile /var/run/$NAME.pid --exec $EPLITE_DIR/$EPLITE_BIN -- $LOGFILE || true
   echo "done"
 }
 
