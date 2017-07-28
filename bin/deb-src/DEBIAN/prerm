@@ -2,3 +2,4 @@
 
 # Stop the appserver:
 service etherpad stop || true
+rm -rf /opt/etherpad/src/node_modules/ || true
