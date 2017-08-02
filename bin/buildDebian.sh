@@ -5,6 +5,8 @@
 set -u
 set -e
 
+VERSION=`awk '$1=="Version:"{print $2}' ./bin/deb-src/DEBIAN/control`
+NAME=etherpad-${VERSION}.deb
 SRC=/tmp/etherpad-deb-src
 DIST=/tmp/etherpad-deb-dist
 SYSROOT=${SRC}/sysroot
@@ -39,6 +41,6 @@ echo 2.0 > ./debian-binary
 find ${DIST}/ -type d -exec chmod 0755 {} \;
 find ${DIST}/ -type f -exec chmod go-w {} \;
 chown -R root:root ${DIST}/
-ar r ${DIST}/etherpad-1.deb debian-binary control.tar.gz data.tar.gz
+ar r ${DIST}/${NAME} debian-binary control.tar.gz data.tar.gz
 popd
-rsync -a ${DIST}/etherpad-1.deb ./
+rsync -a ${DIST}/${NAME} ../

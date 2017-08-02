@@ -5,5 +5,5 @@ Priority: optional
 Architecture: amd64
 Installed-Size: SIZE
 Depends: nodejs
-Maintainer: John McLear <john@mclear.co.uk>
+Maintainer: Ye Chen <ye.chen@cloudfortdata.com>
 Description: Etherpad is a collaborative editor.  
